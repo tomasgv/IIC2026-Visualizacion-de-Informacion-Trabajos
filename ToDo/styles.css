@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#sign {
+  font-weight: bold;
+}
+
+#menu {
+  margin: 5px auto;
+  padding: 5px;
+  width: 250px;
+  border: 2px solid slategray;
+}
+
+#list {
+  border: 2px solid slategray;
+  min-height: 50px;
+}
+
+#list > p {
+  margin: 0 auto;
+  padding: 15px 0;
+  background-color: snow;
+  border-bottom: 2px dashed slategrey;
+}

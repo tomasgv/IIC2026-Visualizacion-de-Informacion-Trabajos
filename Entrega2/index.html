@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="https://d3js.org/d3.v6.js"></script> <!--  Cargar D3 -->
+    <title>Entrega 2 🌺</title>
+</head>
+<body>
+    <div id="containerExternal"><h1 class="title"> Entrega 2</h1></div>
+    <div id='columnContainer'>
+        <p>Seleccione la flor que desea ver:</p><div id="selectorContainer"></div>
+        <div id="container"></div>
+        <div id="containerExplanation">
+            <h2>Explicación</h2>
+            <p>Al hacer este glifo, intenté replicar el ejemplo mostrado en el enunciado,
+                donde los <b>radios horizontales y verticales</b> de cada elipse son representados por el
+                <b>largo y ancho promedio</b> de cada especie de flor. Los colores fueron elegidos de modo que sea
+                fácil distinguir cada especie de flor (se escogieron distintos para cada especie), pero no son
+                representativos de sus colores en la realidad. Por estética, se entregó un círculo al centro de cada representación,
+                el cual es igual para todas las especies.
+            </p>
+            <p>
+                Para la implementación del glifo utilicé <i>join</i> de datos personalizado para modificar
+                tanto <i>enter</i> como <i>update</i> con ángulos especiales para pétalos y sépalos, y para agregar
+                transiciones tanto en la entrada como actualización de datos. También utilicé un evento para que se marque
+                con negrilla el texto de la simbología cuando el cursos pase por encima de un pétalo o sépalo.
+            </p>
+            <p>
+                La mayor dificultad que tuve en esta Entrega fue la parte de actualización de los datos. Había utilizado ciclos
+                <i>for</i> al principio para agregar todos los pétalos y sépalos de la flor en la entrada de un solo dato (los promedios de largo y ancho de 
+                cada parte de la flor). Sin embargo al actualizarse se transformaba en un solo pétalo 😭. Luego de intentar resolver esto mucho tiempo,
+                decidí entregar seis datos en lugar de uno solo: uno para cada parte. Además aproveché de especificar el tipo de parte, cosa que me sería de utilidad después.
+            </p>
+            <p>
+                Sería ideal recibir un <i>feedback</i> sobre el modo en que implementé lo anterior, pues a mi parecer quedó como un "parche" ante el problema surgido,
+                y no debería ser necesario entregar más que solo un objeto con todos los promedios.
+            </p>
+            <p>
+                Otra dificultad que tuve y no solucioné fue el círculo que agregué por fines estéticos. Hasta donde sé, tenía que crearse obligatoriamente
+                después de los pétalos y sépalos con el fin de que quede encima de ellos. El problema surge debido a que lo creé en 
+                <i>enter</i>, y cada vez que se cambia de tipo de flor se crea un nuevo círculo encima.
+                Me parece que una solución a esto es crear el círculo en una función distinta que no sea la que se llama cada vez que se cambia de tipo de flor.
+            </p>
+            <p>
+                ¡Eso sería todo! Gracias por darte el tiempo de leer hasta acá 🥰.
+            </p>
+        </div>
+    </div>
+</body>
+<script src="./scripts/index.js"></script>
+</html>

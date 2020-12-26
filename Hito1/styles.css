@@ -1,0 +1,32 @@
+h1 {
+    color: darkviolet;
+    opacity: 1;
+}
+body {
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: #1a1a1a;
+    background-image: url("https://i.pinimg.com/236x/d2/ed/59/d2ed59aa1cfcf1e052f16f86b20563a7.jpg");
+    background-attachment: fixed;
+}
+.contenedorTexto {
+    background-color: ghostwhite;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 2px solid slategray;
+}
+.contenedorTextoExterno {
+    background-color:rgba(0,0,0,0.8);
+    margin-left: 15%;
+    margin-right: 15%;
+    color: darkviolet;
+}
+li {
+    text-align: left;
+}
+code {
+    font-size: large;
+}

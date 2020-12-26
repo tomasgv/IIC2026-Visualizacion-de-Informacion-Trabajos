@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Hito 1 IIC2026 🚀</title>
+    </head>
+    <body>
+        <div class="contenedorTextoExterno">
+            <h1>Hito 1</h1>
+            <h3>Nombre: Tomás González Villarroel</h3>
+        </div>
+        <div class='contenedorTexto'>
+
+            <h2>Parte 1: Abstracción de Tareas</h2>
+            <p>Las tareas identificadas son las siguientes:</p>
+            <ul>
+                <li><b>Descubrir correlaciones entre muertes en zonas geográficas específicas 
+                    y factores socio económicos
+                </b></li>
+                <p>La acción es descubrir, ya que se busca aprender información que antes no era conocida.
+                     El objetivo es de tipo correlación, ya que busca relacionar grupos de atributos. 
+                     Los datos relacionados con esta tarea son:
+                </p>
+                <ul>
+                    <li>
+                        Por el lado geográfico: <code>city</code>, <code>state</code>, <code>county_fp</code>
+                    </li>
+                    <li>
+                        Por el lado socio económico: 
+                        <code>p_income</code>, <code>county_income</code>, <code>nat_bucket</code>,
+                        <code>pov</code>, <code>urate</code> y <code>college</code> 
+                    </li>
+                </ul>
+                <p>Un dato derivado de utilidad para esta tarea es la cantidad de muertes por zona geográfica (tanto por estado como por ciudad, condado o tracto), y muertes por quintil de ingresos del hogar del lugar del incidente. </p>
+                <p> Cabe destacar que esta tarea se puede dividir en varias, especificando la zona geográfica y un factor socio económico. Un ejemplo de esto es: Descubrir correlaciones entre muertes en estados y porcentaje de pobreza.</p>
+                <li><b>Comparar la cantidad de muertes de personas pertenecientes a minorías raciales con las de personas de raza blanca</b></li>
+
+                <p>La acción es comparar, ya que se busca consultar la cantidad de muerte de personas pertenecientes a minorías raciales y compararlas con la cantidad de muertes de personas blancas. El objetivo es de tipo distribución, pues la descripción se refiere a un atributo específico y su comportamiento en varias entidades.</p>
+                <p>El atributo relacionado con esta tarea es <code>raceethnicity</code>. Un dato derivado de utilidad para esta tarea es la cantidad muertes por etnicidad.</p>
+                <p>Otra tarea relacionada de interés para la historiadora es <b>Comparar la cantidad de muertes de personas de cada sexo biológico por etnicidad</b>. 
+                    En este caso, la acción es comparar, ya que se busca comparar la cantidad de muertes entre cada sexo biológico que tengan la misma etnicidad. 
+                    El objetivo es de tipo distribución, pues la descripción se refiere a un atributo específico, el sexo biológico, y su comportamiento en entidades de las mismas etnicidades. Los datos relacionados con esta tarea son <code>gender</code> y <code>raceethnicity</code>.</p>
+                <li><b>Resumir la cantidad de muertes de personas a lo largo del año</b></li>
+                <p>La acción es resumir, debido a que se busca mostrar adecuadamente el conjunto completo de objetos en el año. El objetivo es de tipo tendencia, ya que se busca describir patrones de muertes que se hayan dado en fechas específicas, donde ocurran eventos como celebraciones. El atributo relacionado con esta tarea es <code>date</code>.</p>
+            </ul>
+
+            <h2>Parte 2: Abstracción de Datos</h2>
+            <p>La clasificación de la columna <code>name</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que los nombres no tienen orden intrínseco entre ellos.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>age</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que las edades cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que las edades tienen comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que las edades avanzan en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que las edades no vuelven a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>gender</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que los sexos biológicos no tienen orden intrínseco entre ellos.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>raceethnicity</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que las etnicidades no tienen orden intrínseco entre ellas.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>date</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que las fechas cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que las fechas tienen comparaciones aritméticas exactas, las cuales pueden ser días de diferencia.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que las fechas avanzan en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, , ya que las fechas no vuelven a un punto inicial durante el año 2015.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>city</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que las ciudades no tienen orden intrínseco entre ellas.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>state</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que los estados no tienen orden intrínseco entre ellos.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>latitude</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que las latitudes cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que las latitudes tienen comparaciones aritméticas exactas. La diferencia entre una posición en latitud y otra se puede medir en grados, minutos y segundos.
+                </li>
+                <li>
+                    <b>Divergente</b>, ya que la latitud puede tener dirección tanto positiva como negativa, teniendo como punto medio los cero grados, y como extremos los 90 grados Norte (90º) o Sur (-90º).
+                </li>
+                <li>
+                    <b>Cíclico</b>, ya que luego del valor máximo o mínimo de latitud los valores se repiten de modo cíclico.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>longitude</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que las longitudes cartográficas cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que las longitudes cartográficas tienen comparaciones aritméticas exactas. La diferencia entre una posición en longitud y otra se puede medir en grados, minutos y segundos.
+                </li>
+                <li>
+                    <b>Divergente</b>, ya que la longitud cartográfica puede tener dirección tanto positiva como negativa, teniendo como punto medio los cero grados, y como extremos los 180 grados Este (180º) u Oeste (-180º), los cuales resultan ser la misma longitud.
+                </li>
+                <li>
+                    <b>Cíclico</b>, ya que luego del valor máximo o mínimo de longitud cartográfica los valores se repiten de modo cíclico.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>county_fp</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que los códigos identificadores de condados no tienen orden intrínseco entre ellos.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>cause</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que las causas de muerte no tienen orden intrínseco entre ellas.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>armed</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que no se puede ordenar a las víctimas que portaban arma con las que no.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>share_white</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que los porcentajes de población que es blanca no hispánica en un tracto cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Ordinal</b>, ya que no hay una diferencia aritmética exacta entre un porcentaje y otro.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que este porcentaje aumenta en una dirección particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que este porcentaje no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>share_black</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que los porcentajes de población que es negra en un tracto cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Ordinal</b>, ya que no hay una diferencia aritmética exacta entre un porcentaje y otro.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que este porcentaje aumenta en una dirección particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que este porcentaje no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>share_hispanic</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que los porcentajes de población hispánica/latina en un tracto cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Ordinal</b>, ya que no hay una diferencia aritmética exacta entre un porcentaje y otro.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que este porcentaje aumenta en una dirección particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que este porcentaje no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>p_income</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que las medianas de ingresos personales a nivel de tracto cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que entre una mediana de ingresos y otra existe una diferencia en dólares.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>county_income</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que las medianas de ingresos de hogares a nivel de condado cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que entre una mediana de ingresos y otra existe una diferencia en dólares.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+                </li> 
+            </ul>
+        <p>La clasificación de la columna <code>nat_bucket</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que los quintiles de ingresos de hogares a nivel del país cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Ordinal</b>, ya que entre un quintil de ingresos y otro no existe una diferencia artimética exacta.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+                </li> 
+            </ul>
+        <p>La clasificación de la columna <code>pov</code> sería:</p>
+        <ul>
+            <li>
+                <b>Ordenado</b>, ya que los porcentajes de pobreza cuentan con orden intrínseco.
+            </li>
+            <li>
+                <b>Ordinal</b>, ya que entre un porcentaje de pobreza y otro no existe una diferencia aritmética exacta.
+            </li>
+            <li>
+                <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+            </li>
+            <li>
+                <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+            </li> 
+        </ul>
+        <p>La clasificación de la columna <code>urate</code> sería:</p>
+        <ul>
+            <li>
+                <b>Ordenado</b>, ya que las razones de desempleo cuentan con orden intrínseco, y se pueden ordenar de menor a mayor razón de desempleo.
+            </li>
+            <li>
+                <b>Ordinal</b>, ya que no existe una diferencia aritmética exacta entre una razón de desempleo y otra.
+            </li>
+            <li>
+                <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+            </li>
+            <li>
+                <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+            </li> 
+        </ul>
+        <p>La clasificación de la columna <code>college</code> sería:</p>
+        <ul>
+            <li>
+                <b>Ordenado</b>, ya que la razón de la población mayor de 25 con una licenciatura o superior a nivel del tracto cuenta con orden intrínseco, por lo que es posible establecer un orden de menor a mayor de este atributo.
+            </li>
+            <li>
+                <b>Ordinal</b>, ya que entre una razón y otra no existe una diferencia aritmética exacta.
+            </li>
+            <li>
+                <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+            </li>
+            <li>
+                <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+            </li> 
+        </ul>
+
+        <p>La clasificación del dato derivado <b>muertes por zona geográfica</b> sería:</p>
+        <ul>
+            <li>
+                <b>Ordenado</b>, ya que la cantidad de muertes en una zona geográfica en particular cuenta con orden intrínseco.
+            </li>
+            <li>
+                <b>Cuantitativo</b>, ya que existe una diferencia aritmética exacta entre estos atributos.
+            </li>
+            <li>
+                <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+            </li>
+            <li>
+                <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+            </li> 
+        </ul>
+        <p>La clasificación del dato derivado <b>muertes por etnicidad</b> sería:</p>
+        <ul>
+            <li>
+                <b>Ordenado</b>, ya que la cantidad de muertes de personas de una etnicidad en particular cuenta con orden intrínseco.
+            </li>
+            <li>
+                <b>Cuantitativo</b>, ya que existe una diferencia aritmética exacta entre estos atributos.
+            </li>
+            <li>
+                <b>Secuencial</b>, ya que este atributo aumenta en una dirección particular.
+            </li>
+            <li>
+                <b>No cíclico</b>, ya que este atributo no vuelve a un punto inicial.
+            </li> 
+        </ul>
+
+        <p>El <i>dataset</i> <code>police_killings.csv</code> corresponde al tipo <b>tabla o tabular</b>,
+             ya que su información está organizada en filas y columnas, donde las columnas indican
+              los distintos atributos y las filas los distintos ítems.</p>
+
+        <p>Este <i>dataset</i> es de tipo <b>estático</b>, es decir, se posee su estado completo
+            desde el comienzo del proceso de diseño. Esto debido a que documenta las muertes en incidentes
+            con policías en los Estados Unidos en el año 2015, y de la situación presentada no se desprende 
+        que este <i>dataset</i> vaya a cambiar en el tiempo ni incluir datos futuros.</p>
+
+        <p>En el <i>dataset</i> se encuentran los siguientes tipos de datos singulares:</p>
+        <ul>
+            <li>
+                <b>Ítem:</b> Los ítems corresponden a cada muerte de una persona, y se indican en cada fila del <i>dataset</i>.
+            </li>
+            <li>
+                <b>Atributo:</b> Pertenecen a cada ítem, y se indican en cada columna del <i>dataset</i>.
+            </li>
+            <li>
+                <b>Posición:</b> Existen dos atributos en específico, <code>latitude</code> y <code>longitude</code>, que entregan información sobre la posición espacial de la muerte de la persona.
+                Por lo tanto, estos atributos pueden ser utilizados para representar visualmente la posición espacial de los ítems.
+            </li>
+        </ul>
+        <p>En el <i>dataset</i> <b>no hay ningún atributo llave</b>. Esto debido a que cualquiera de ellos puede repetirse en otro ítem. 
+        Sí podría haber un atributo llave: un identificador de persona, como el RUT en personas de nacionalidad chilena. Este atributo 
+        sería único entre ítems, por lo que podría ser usado como llave.</p>
+    </div>
+    <div class="contenedorTextoExterno">
+        <p><a href="https://www.pinterest.cl/pin/857302479043859402/">Fuente de la bella imagen de fondo</a> </p>
+    </div>
+</html>

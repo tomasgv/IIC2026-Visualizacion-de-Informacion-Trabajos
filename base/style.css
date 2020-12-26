@@ -1,0 +1,29 @@
+#global-cont {
+    font-family: 'Roboto', sans-serif;
+    width: 500px;
+    text-align: center;
+  }
+  
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+  }
+  
+  #btn-cont {
+    background-color: #6c6c6c; /* Green */
+    border: none;
+    color: white;
+    padding: 3px 8px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+  }
+  
+  #btn-cont:hover {
+    background-color: #9c9c9c;
+  }
+
+  

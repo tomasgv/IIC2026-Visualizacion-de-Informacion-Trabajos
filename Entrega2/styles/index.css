@@ -1,0 +1,57 @@
+.title, .label, #tooltip{
+    text-anchor: middle; /*Centrar el texto*/
+}
+body{
+    font-family: Roboto, Verdana, sans-serif;
+    text-align: center;
+    align-content: center;
+    background-image: url('https://64.media.tumblr.com/0186833dd3113cee4d246d295d827787/tumblr_pr0d5ogV8k1w1valto3_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-attachment: fixed;
+}
+
+#containerExternal {
+    background-color:rgba(255, 255, 255, 0.2);
+    margin-left: 15%;
+    margin-right: 15%;
+    display: inline-block;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    line-height: 3vh;
+    border-radius: 5%;
+}
+
+#container {
+    margin-top: 3vh;
+}
+
+#container svg{
+    border-style: solid;
+    border-color: slategray;
+}
+
+#select {
+    font-size: large;
+}
+
+#columnContainer {
+    background-color: snow;
+    border-style: solid;
+    border-color: slategray;
+    margin-top: 2vh;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#containerExplanation {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+    padding-bottom: 5%;
+}
+
+#circlePetal, #circleSepal, ellipse, circle {
+    stroke:black;
+    stroke-width: 0.3%;
+}

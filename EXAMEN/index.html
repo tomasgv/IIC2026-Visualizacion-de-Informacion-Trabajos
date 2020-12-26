@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <script src="https://d3js.org/d3.v6.js"></script> 
+        <title>Examen IIC2026 🚀</title>
+    </head>
+    <body>
+        <nav>
+            <a href="#">Informe</a>
+            <a href="./visualizacion.html">Herramienta 1</a>
+            <a href="./visualizacion_2.html">Herramienta 2</a>
+        </nav>
+        <div class="contenedorTextoExterno">
+            <h1>Examen</h1>
+            <h3>Nombre: Tomás González Villarroel</h3>
+        </div>
+        <div class='contenedorTexto'>
+
+            <h1>Nivel 1: Caracterización de dominio</h1>
+            <h2>Contexto</h2>
+            <p>Los datos a utilizar tratan sobre canciones obtenidas de la API Web de Spotify, e incluyen canciones 
+                desde 1921 hasta este 2020.
+                Específicamente, en los <i>datasets</i> a utilizar se tienen más de 170.000 canciones
+                distintas. Además, se cuenta con algunos que agrupan los datos de canciones según 
+                artista, género y año. 
+                Para este examen se utilizarán dos de los <i>datasets</i> disponibles: <code>data_by_genres.csv</code>,
+                 el cual contiene datos de canciones agrupados por géneros musicales, y <code>data_by_year.csv</code>,
+                 el cual contiene datos de canciones agrupados por año.
+            </p>
+            <h2><i>Datasets</i></h2>
+            <h3><code>data_by_genres.csv</code></h3>
+            En este <i>dataset</i>, cada <i>item</i> tiene datos de canciones de un género musical distinto.
+            <table>
+                <tr>
+                    <th>Columna</th>
+                    <th>Explicación</th>
+                </tr>
+                <tr>
+                    <td><code>genres</code></td>
+                    <td>Indica el género músical</td>
+                </tr>
+                <tr>
+                    <td><code>acousticness</code></td>
+                    <td>Medida relativa de lo acústico que es el género. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>valence</code></td>
+                    <td>Medida que describe la positividad que tienen las canciones de ese género. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>danceability</code></td>
+                    <td>Medida relativa de lo bailable que es el género. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>duration_ms</code></td>
+                    <td>Duración promedio en milisegundos de las canciones del género.</td>
+                </tr>
+                <tr>
+                    <td><code>energy</code></td>
+                    <td>Energía promedio de las canciones del género. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>popularity</code></td>
+                    <td>Popularidad promedio de las canciones del género. Está en el intervalo [0, 1].</td>
+                </tr>
+            </table>
+            <h3><code>data_by_year.csv</code></h3>
+            En este <i>dataset</i>, cada <i>item</i> tiene datos de canciones de un año distinto.
+            <table>
+                <tr>
+                    <th>Columna</th>
+                    <th>Explicación</th>
+                </tr>
+                <tr>
+                    <td><code>year</code></td>
+                    <td>Indica el año.</td>
+                </tr>
+                <tr>
+                    <td><code>acousticness</code></td>
+                    <td>Medida relativa de lo acústico que son las canciones de ese año. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>valence</code></td>
+                    <td>Medida que describe la positividad que tienen las canciones de ese año. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>danceability</code></td>
+                    <td>Medida relativa de lo bailable que son las canciones de ese año. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>duration_ms</code></td>
+                    <td>Duración promedio en milisegundos de las canciones del año. </td>
+                </tr>
+                <tr>
+                    <td><code>energy</code></td>
+                    <td>Energía promedio de las canciones del año. Está en el intervalo [0, 1].</td>
+                </tr>
+                <tr>
+                    <td><code>popularity</code></td>
+                    <td>Popularidad promedio de las canciones del año. Está en el intervalo [0, 1].</td>
+                </tr>
+            </table>
+
+            El potencial usuario objetivo de la herramienta puede ser une compositore, o alguien con 
+            interés en las características y evolución de la música. La herramienta puede ser utilizada para
+            analizar las características de cierto género musical, o tendencias en estas características a lo 
+            largo del tiempo.
+            
+
+            <h1>Nivel 2: Abstracción de Datos y Tareas</h1>
+            <h2>Abstracción de Tareas</h2>
+            Las tareas identificadas son las siguientes:
+            <ul>
+                <li>
+                    <b>Comparar varios atributos entre diversos géneros musicales</b>
+                    <p>La acción es comparar, ya que se busca consultar las distintos atributos
+                        de géneros musicales y compararlos entre ellos.
+                     El objetivo es de tipo distribución, pues se busca comparar el comportamiento de ciertos atributos en varias entidades.</p>
+                </li>
+                <li>
+                    <b>Descubrir tendencias de atributos en las canciones a lo largo de los años</b>
+                    <p>La acción es descubrir, ya que se busca aprender información que antes no era conocida.
+                        El objetivo es de tipo tendencia, ya que busca descubrir patrones (aumento, descenso, entre otros) que se den en atributos a lo largo de los años. 
+                   </p>
+                </li>
+                <li>
+                    <b>Disfrutar distribuciones de atributos en las canciones a lo largo de los años</b>
+                    <p>La acción es disfrutar, ya que se busca estimulación causada por curiosidad sobre ciertos atributos. 
+                        El objetivo es de tipo distribución, ya que se refiere al comportamiento de atributos específicos entre varias entidades.
+                   </p>
+                </li>
+                <li>
+                    <b>Descubrir el valor individual de un atributo para un año específico.</b>
+                    <p>La acción es descubrir, ya que se busca aprender información que antes no era conocida.
+                        El objetivo es de tipo valor individual, ya que busca relacionar grupos de atributos. 
+                   </p>
+                </li>
+            </ul>
+
+            <h2>Abstracción de Datos</h2>
+            <p>A continuación se clasificarán las columnas a usar de todos los <i>datasets</i>. Existen 
+            varias que se repiten, por lo que se optó por hacer la clasificación para todos los <i>datasets</i>.</p>
+            
+            <p>La clasificación de la columna <code>year</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que los años cuentan con orden intrínseco.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que los años tienen comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que los años avanzan en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que los años no vuelven a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>genres</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Categórico</b>, ya que los géneros musicales no tienen orden intrínseco entre ellos.
+                </li>
+                <li>
+                    <b>No aplica el resto de las clasificaciones</b>, ya que este atributo es de tipo categórico.
+                </li>
+            </ul>
+            <p>La clasificación de la columna <code>danceability</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que la medida de bailabilidad cuenta con orden intrínseco. Puede ser ordenada de menor a mayor.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que la medida de bailabilidad tiene comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que la medida de bailabilidad avanza en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que la medida de bailabilidad no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>acousticness</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que la medida de acusticidad cuenta con orden intrínseco. Puede ser ordenada de menor a mayor.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que la medida de acusticidad tiene comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que la medida de acusticidad avanza en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que la medida de acusticidad no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>valence</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que la medida de valencia cuenta con orden intrínseco. Puede ser ordenada de menor a mayor.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que la medida de valencia tiene comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que la medida de valencia avanza en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que la medida de valencia no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>duration_ms</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que la duración cuenta con orden intrínseco. Puede ser ordenada de menor a mayor.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que la duración tiene comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que la duración avanza en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que la duración no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>energy</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que la medida de energía cuenta con orden intrínseco. Puede ser ordenada de menor a mayor.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que la medida de energía tiene comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que la medida de energía avanza en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que la medida de energía no vuelve a un punto inicial.
+                </li> 
+            </ul>
+            <p>La clasificación de la columna <code>popularity</code> sería:</p>
+            <ul>
+                <li>
+                    <b>Ordenado</b>, ya que la medida de popularidad cuenta con orden intrínseco. Puede ser ordenada de menor a mayor.
+                </li>
+                <li>
+                    <b>Cuantitativo</b>, ya que la medida de popularidad tiene comparaciones aritméticas exactas.
+                </li>
+                <li>
+                    <b>Secuencial</b>, ya que la medida de popularidad avanza en una dirección en particular.
+                </li>
+                <li>
+                    <b>No cíclico</b>, ya que la medida de popularidad no vuelve a un punto inicial.
+                </li> 
+            </ul>
+
+            <p>Todos los <i>datasets</i> a utilizar corresponden al tipo <b>tabla o tabular</b>,
+                ya que su información está organizada en filas y columnas, donde las columnas indican
+                los distintos atributos y las filas los distintos ítems.</p>
+
+            <p>Los <i>datasets</i> son de tipo <b>estáticos</b>, es decir, se posee su estado completo
+                desde el comienzo del proceso de diseño. Esto debido a que no se puede desprender 
+                que los datos vayan a cambiar en el tiempo ni incluir datos futuros.</p>
+    
+            <p>En el <i>dataset</i> se encuentran los siguientes tipos de datos singulares:</p>
+            <ul>
+                <li>
+                    <b>Ítem:</b> En el caso de <code>data_by_genres.csv</code>, cada ítem corresponde a las canciones de un género musical específico, y sus atributos
+                    indican el promedio de atributos de cada canción del género. En el caso de <code>data_by_year.csv</code>, 
+                    cada ítem corresponde a las canciones de un año específico, y sus atributos
+                    indican el promedio de atributos de cada canción de ese año. 
+                </li>
+                <li>
+                    <b>Atributo:</b> Pertenecen a cada ítem, y se indican en cada columna de los <i>datasets</i>.
+                </li>
+            </ul>
+
+            <h1>Nivel 3: Codificación Visual y de Interacción</h1>
+            <h2>Herramienta 1</h2>
+            Para esta herramienta se optó por hacer glifos. Siguiendo la temática musical de los <i>datasets</i>,
+            se eligió como figura una doble corchea, en donde cada elemento básico que la compone y su posición vertical fueron usadas
+            para codificar los atributos de interés.
+            
+            En específico, los glifos codifican cada uno de los atributos del siguiente modo:
+            <ul>
+                <li>
+                    <b>Valence</b>: Es la barra izquierda de la doble corchea. <b>Canal usado:</b> su alto indica el valor de 
+                    valencia de las canciones del año o género musical específico.
+                </li>
+                <li>
+                    <b>Acousticness</b>: Es la barra derecha de la doble corchea. <b>Canal usado:</b> su alto indica el valor de 
+                    acusticidad de las canciones del año o género musical específico.
+                </li>
+                <li>
+                    <b>Danceability</b>: Es la elipse izquierda de la doble corchea. <b>Canal usado:</b> su radio (tanto vertical como horizontal varía igual) indica el valor de 
+                    bailabilidad de las canciones del año o género musical específico.
+                </li>
+                <li>
+                    <b>Energy</b>: Es la elipse derecha de la doble corchea. <b>Canal usado:</b> su radio (tanto vertical como horizontal varía igual) indica el valor de 
+                    energía de las canciones del año o género musical específico.
+                </li>
+                <li>
+                    <b>Duration ms</b>: Es la barra superior de la doble corchea. <b>Canal usado:</b> su ancho indica el valor de 
+                    bailabilidad de las canciones del año o género musical específico.
+                </li>
+                <li>
+                    <b>Popularidad</b>: En este caso, el <b>canal usado</b> es la posición vertical de la barra superior de la doble corchea. Usa como apoyo
+                    las líneas que siguen diseño de pentagrama, de modo que la menor popularidad está en la línea más baja del pentagrama,
+                    mientras que la mayor popularidad se encuentra a la altura de la línea de más arriba del pentagrama.
+                </li>
+            </ul>
+            <p>Además, los glifos fueron ubicados espacialmente en filas de 10 elementos, de modo que sea cómodo visaulizar cada glifo.</p>
+            <p>La herramienta puede ser usada con ambos <i>datasets</i>, y en caso de escoger el <i>dataset</i>
+            de canciones agrupadas por género musical, también se deberá escoger una letra del alfabeto, de modo que se visualicen los glifos 
+            para todos los géneros musicales que comiencen con esa letra. Esto fue hecho con el objetivo de ahorrar tiempo de procesamiento, y entregar facilidad
+            para encontrar datos de un género en particular.</p>
+            
+            <p>A través de esta herramienta es posible comparar varios ítems entre ellos, específicamente los tamaños de cada elemento que compone al glifo y su posición vertical.</p>
+            <p>También es posible descubrir tendencias al cambiar al <i>dataset</i> que usa años, al observar disminuciones o aumentos en algún elemento específico del glifo.</p>
+            <p>La tarea que tiene como objetivo disfrutar fue un motor para construir los glifos, pues se tuvo curiosidad
+            en observar las distintas formas resultantes que tendrán los glifos para distintos ítems.</p>
+
+            <h2>Herramienta 2</h2>
+            <p>Esta herramienta tiene problemas al aplicar <i>zoom</i> y <i>panning</i>. No son errores, pero el gráfico pasa más allá de los ejes al hacer <i>panning</i>.</p>
+            <p>La segunda herramienta tiene como objetivo resolver la tarea de conocer valores específicos, pues a través de glifos 
+            eso no se puede ver con precisión.
+            Se utilizó como base el ejercicio de Utilidades de D3 II. </p>
+            <p>En ella, se usó la marca unidimensional de punto para indicar cada ítem, y una marca bidimensional de línea
+                que une cada punto indicando temporalidad, pues los ítems en este caso son de años específicos.
+            </p>
+            <p>Se utilizó <i>zoom</i> y <i>panning</i> para poder ver con mayor detalle cada ítem.</p>
+            <p>Es posible cambiar de atributos usando una caja de selección.</p>
+            <!-- <ul>
+                <li>
+                    <b>Primera Tarea</b>:
+                </li>
+                <li>
+                    <b>Segunda Tarea</b>:
+                </li>
+                <li>
+                    <b>Tercera Tarea</b>:
+                </li>
+            </ul> -->
+
+            
+    </div>
+
+</html>

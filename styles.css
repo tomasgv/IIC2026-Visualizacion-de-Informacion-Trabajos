@@ -1,0 +1,16 @@
+h1 {
+    color: red;
+}
+body {
+    background-color: lightblue;
+}
+.container {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    background-color:darkslateblue;
+    align-content: center;
+
+}
+.item {
+    flex-shrink: 3; /* default 1 */
+}

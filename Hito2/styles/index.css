@@ -1,0 +1,86 @@
+body {
+    font-family: Trebuchet MS, Roboto;
+}
+h1, h3{
+    line-height: 0;
+    padding-top: 1vh;
+}
+p {
+    line-height: 0;
+}
+#contenedorTarjetas {
+    margin-left: 20vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1vw;
+    grid-auto-rows: minmax(100px, auto);
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
+}
+#contenedorTarjetas div {
+    border-radius: 10%;  
+    font-size: 1.5rem;
+}
+.tarjetaResumen {
+    border-radius: 10%;
+    margin-left: 1vw;
+    margin-right: 1.2vw;
+    background-color: rgb(252, 95, 95);
+    font-size: 2rem;
+}
+#sidebar {
+    height: 100%;
+    width: 20vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color:  darkgray;
+    display: flex;
+    flex-flow: column;
+}
+#sidebar p, h1, h2, h3 {
+    margin-left: 2vw;
+}
+#selectFiltro {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 25vh;
+}
+#selectFiltro p {
+    margin-left: 0;
+}
+optgroup {
+    font-size: 0.1rem;
+}
+.stats {
+    font-size: 0.6rem;
+    fill: rgb(103, 103, 103);
+}
+.stats-black {
+    font-size: 0.6rem;
+    fill: black;
+}
+.rating {
+    font-size: 2.5rem;
+}
+.league, .club {
+    fill: rgb(72, 72, 72);
+}
+select {
+    border-radius: 10%;
+    padding: 0.5vh;
+    font-size: 0.7rem;
+}
+.row {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+input[type=range] {
+    appearance: none;
+    border-radius: 10%;
+}

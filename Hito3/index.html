@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://d3js.org/d3.v6.js"></script> 
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+    <title>Hito 3 🌎 </title>
+</head>
+<body>
+    <div id="sidebar">
+        <h1>Hito 3</h1>
+        <p>Tomás González</p>
+    </div>
+    <div id="contenedorVistas">
+        <div id="contenedorMapa"></div>
+        <div id="contenedorGrafico"></div>
+    </div>  
+    <div id="contenedorBotones"></div>
+    <div id="informe">
+        <h1>Decisiones de  Diseño</h1>
+        <ul>
+            <li><b><i>Color-map</i></b>: Se escogió el atributo de índice de masculinidad, y como se trata de un atributo ordenado y secuencial,
+            se hizo del tipo respectivo (secuencial). Además se hizo continuo, ya que se trata de un atributo cuantitativo.</li>
+            <li><b>Proyección Cartográfica</b>: Se escogió como proyección Mercator, pues se privilegió mantener la forma del país. En este caso,
+            no se comparará con otros países, por lo que mantener el tamaño pierde importancia.</li>
+            <li><b><i>Zoom</i> y <i>Pan</i></b>: Para hacer <i>zoom</i> se decidió que fuera mediante la rueda del ratón,
+            y para hacer <i>pan</i> que fuera a través de <i>clicks</i> y arrastrando el cursor. Además, existe un botón que quita todo el <i>zoom</i>
+            actual del mapa, y vuelve el <i>pan</i> al origen.</li>
+            <li><b><i>Idiom</i> de interacción para selección de comunas</b>: El <i>idiom</i> escogido fue de selección a través del <i>click</i> del cursor. Cuando se hace <i>click</i>
+            en una comuna en específico, ésta es seleccionada y cambia de color. La segunda vista es actualizada acorde a la selección.</li>
+            <li><b><i>Idiom</i> de segunda vista</b>: El <i>idiom</i> visual implementado fue de un glifo, donde se tienen barras represenando el
+            índice de dependencia total por comuna, y cada barra está dividida en dos usando colores distintos: uno indica el índice de dependencia
+            de jóvenes y otro el de adultos mayores. Como sumando ambos se obtiene el índice de dependencia total, se tiene que la barra completa con sus
+            divisiones lo representa fielmente. </li>
+            <li><b>Organización espacial</b>: Se escogió como organización la vista lado a lado, de modo que se puedan visualizar con facilidad los cambios
+            en la selección de comunas y su actualización en el gráfico. </li>
+
+        </ul>
+    </div>
+    <script src="scripts/index.js"></script>
+</body>
+</html>

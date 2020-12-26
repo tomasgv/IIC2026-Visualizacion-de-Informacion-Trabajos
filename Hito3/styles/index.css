@@ -1,0 +1,56 @@
+body {
+    font-family: Trebuchet MS, Roboto;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+h1, h3{
+    line-height: 0;
+    padding-top: 1vh;
+}
+p {
+    line-height: 0;
+}
+#navbar {
+    height: 20vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color:  darkgray;
+    display: flex;
+    flex-flow: column;
+}
+#contenedorMapa {
+    width: 500px;
+    height: 400px;
+    border-style: solid;
+    border-color: midnightblue;
+    background-color: lightblue;
+}
+
+#contenedorVistas {
+    width: 1100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#contenedorGrafico {
+    width: 550px;
+    border-style: solid;
+    border-color: midnightblue;
+}
+
+#contenedorBotones {
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+#informe {
+    width: 80vw;
+    text-align: justify;
+}
+#informe h1 {
+    text-align: center;
+}

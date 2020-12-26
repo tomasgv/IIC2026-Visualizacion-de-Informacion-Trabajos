@@ -1,0 +1,122 @@
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.row {
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.col.reverse {
+  flex-direction: column-reverse;
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-1 {
+  flex-basis: 8.333%;
+  max-width: 8.333%;
+}
+
+.col-2 {
+  flex-basis: 16.667%;
+  max-width: 16.667%;
+}
+
+.col-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.col-4 {
+  flex-basis: 33.333%;
+  max-width: 33.333%;
+}
+
+.col-5 {
+  flex-basis: 41.667%;
+  max-width: 41.667%;
+}
+
+.col-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.col-7 {
+  flex-basis: 58.333%;
+  max-width: 58.333%;
+}
+
+.col-8 {
+  flex-basis: 66.667%;
+  max-width: 66.667%;
+}
+
+.col-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+}
+
+.col-10 {
+  flex-basis: 83.333%;
+  max-width: 83.333%;
+}
+
+.col-11 {
+  flex-basis: 91.667%;
+  max-width: 91.667%;
+}
+
+.col-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.center {
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.middle {
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+}

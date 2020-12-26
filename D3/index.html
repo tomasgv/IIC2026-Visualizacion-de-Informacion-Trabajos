@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>D3 is Cool ✨</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+
+  <body class="container">
+    <div class="row center">
+      <div class="col-12">
+        <h1>BarGraph in D3 📊</h1>
+      </div>
+    </div>
+    <div class="row center middle">
+      <div id="submit" class="col-4">
+        <label for="value">Add Bar</label> <br />
+        <input type="number" value="15.62" id="value" />
+        <button type="button">Send</button>
+      </div>
+      <div class="col-4">
+        <button type="button" id="shuffle">Shuffle</button>
+        <button type="button" id="sort">Sort</button>
+      </div>
+    </div>
+    <div id="graph"></div>
+    <div id="sign" class="row center">
+      <div class="col-12">
+        <p>With 💜, by KnowYourselves</p>
+      </div>
+    </div>
+  </body>
+  <script src="bar.js"></script>
+</html>

@@ -1,0 +1,117 @@
+h1 {
+    color: rgb(181, 21, 181);
+    opacity: 1;
+}
+body {
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    gap: 2vw;
+    padding: 2vw 3vw;
+    background-color: rebeccapurple;
+    width: 100%;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+nav a:hover {
+    color: gray;
+}
+.contenedorTexto {
+    background-color: ghostwhite;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 2px solid slategray;
+}
+.contenedorTextoExterno {
+    margin-left: 15%;
+    margin-right: 15%;
+    color: rgb(181, 21, 181);
+}
+li {
+    text-align: left;
+}
+code {
+    font-size: large;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.title, .label, #tooltip{
+    text-anchor: middle; /*Centrar el texto*/
+}
+
+.line {
+    fill: none; /*Relleno vacío y stroke o borde de color, para simular la linea pedida*/
+    stroke: #31a558;
+    stroke-width: 3;
+}
+
+.dot {
+    fill: #222222; /*color que serán los nodos*/
+    stroke: #fff; /*borde al circulo, por aspectos visuales*/
+}
+
+.selected {
+    fill: rgb(70, 70, 70); /*color que serán los nodos mientras tengan el mouse encima*/
+    stroke: #fff;
+}
+#container {
+    position: relative;
+    top: 10vh;
+}
+#contenedorVis {
+    margin-top: 20vh;    
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#contenedorNota {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+#contenedorInfo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 20vh;
+    gap: 6vw;
+}
+#contenedorSelectores {
+    margin-top: -2vh;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2vh;
+    text-align: center;
+}
+
+#selectContainer {
+    margin-top: 10vh;
+}
